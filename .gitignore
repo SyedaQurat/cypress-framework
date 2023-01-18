@@ -54,3 +54,4 @@ log
 allure-results
 package-lock.json
 cypress/screenshots
+cypress/videos
