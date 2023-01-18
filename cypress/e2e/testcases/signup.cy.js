@@ -1,13 +1,20 @@
 import sign_up_page from "../pages/signupPage.js";
 
-describe("SignUp template", () => {
-  beforeEach(() => {
+describe("Navigation to https://monese.com", () => {
+  before(() => {
     cy.visit(Cypress.config().baseUrl);
-  })
-  it("navigate to Monese.com", () => {
-    cy.viewport(Cypress.config().viewport);
-    sign_up_page.click_acknowledge_button();
-    sign_up_page.click_signup_button();
-    cy.end();
-  })
-})
+  });
+  context("when language:EN and country:GB", () => {
+    it("should click cookies banner", () => {
+      cy.viewport(Cypress.config().viewport);
+      sign_up_page.click_cookie_banner();
+      sign_up_page.click_signup_button(Cypress.config().countryName);
+    });
+
+    // Need to work on adding different 'it' block
+    it("should click signup button", () => {
+
+      sign_up_page.click_signup_button(Cypress.config().countryName);
+    });
+  });
+});
