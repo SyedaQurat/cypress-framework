@@ -5,6 +5,8 @@ class sign_up_page {
     var acknowledge_button = '//*[contains(text(),"Yes, I’m happy")]';
     var homepage_banner_title = "The peace-of-mind money app";
     cy.xpath(acknowledge_button).click();
+
+        // Assertions added //
     cy.contains('.styles_CookieBannerContainer___oXGs.styles_altCookieBannerContainer__nnRlL').to;
     expect(homepage_banner_title).to.not.null;
   }
