@@ -55,3 +55,4 @@ allure-results
 package-lock.json
 cypress/screenshots
 cypress/videos
+cypress/downloads
