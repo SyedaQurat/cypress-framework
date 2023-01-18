@@ -50,6 +50,6 @@ Thumbs.db
 *.wmv
 
 # Generated Packages folders/files
-log/
-allure-results/
+log
+allure-results
 package-lock.json
