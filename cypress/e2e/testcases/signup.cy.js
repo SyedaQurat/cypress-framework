@@ -9,12 +9,7 @@ describe("Navigation to https://monese.com", () => {
       cy.viewport(Cypress.config().viewport);
       sign_up_page.click_cookie_banner();
       sign_up_page.click_signup_button(Cypress.config().countryName);
-    });
-
-    // Need to work on adding different 'it' block
-    it("should click signup button", () => {
-
-      sign_up_page.click_signup_button(Cypress.config().countryName);
-    });
+      cy.end()
+    })
   });
 });
