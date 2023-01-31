@@ -38,8 +38,8 @@ class sign_up_page {
   click_signup_button() {
     cy.get(locators.sign_up_btn).eq(0).click();
   }
-  
-  assert_signup_modal(){
+
+  assert_signup_modal() {
     cy.on("window:alert", (text) => {
       expect(text).to.contains(
         "So that you can open the best account for you, start by telling us where you live."
@@ -63,7 +63,12 @@ class sign_up_page {
 
   click_homebanner_signup_button() {
     cy.get(locators.homebanner_sign_up_btn).eq(0).click();
-   }
+  }
+
+  click_footer_signup_button() {
+    cy.get(locators.scroll_to).scrollIntoView()
+    cy.get(locators.footer_sign_up_btn).eq(6).click();
+  }
 }
 
 export default new sign_up_page();

@@ -46,6 +46,17 @@ describe("Navigation to https://monese.com", () => {
         sign_up_page.click_continue_btn
         cy.end();
       });
-    });
+
+      it.only("should click SignUp button on Footer", () => {
+        cy.viewport(Cypress.config().viewport);
+        sign_up_page.click_cookie_button();
+        sign_up_page.click_footer_signup_button();
+        sign_up_page.assert_signup_modal();
+        sign_up_page.click_country_dropdown();
+        sign_up_page.enter_and_search_countryname(c)
+        sign_up_page.click_continue_btn
+        cy.end();
+      });
+  });
   });
 });

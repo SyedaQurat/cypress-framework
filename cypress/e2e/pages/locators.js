@@ -8,8 +8,10 @@ class locators {
   search_within_country_dropdown =
     "div[class^='styles_SearchBoxContainer'] input";
   click_searched_country = "div[class^='styles_ListItem'] span";
-  click_continue_btn = "span[class^='styles_DesktopFormButton'] button"
+  click_continue_btn = "button[class^='Button_Button'] span"
   homebanner_sign_up_btn = "div[class^='SignupIcons_SignupIconsContainer'] div";
+  footer_sign_up_btn = "button[class^='Button_Button'] span"
+  scroll_to  = "div[class^='container styles_Container'] h2"
 }
 
 export default new locators();

@@ -8,6 +8,7 @@ module.exports = defineConfig({
     baseUrl: "https://monese.com/gb/en",
     viewport: "macbook-16",
     country_list: ["Germany", "Austria", "Pakistan", "Estonia", "Finland"],
+    // country_list: ["Germany"],
     setupNodeEvents(on, config) {
       allureWriter(on, config);
       return config;
