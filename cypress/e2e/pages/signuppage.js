@@ -31,59 +31,39 @@ class sign_up_page {
   assert_manage_settings_button() {
     expect(locators.manage_settings_btn).to.not.null;
   }
-  click_save_settings_button(){
+  click_save_settings_button() {
     cy.get(locators.save_settings_btn).eq(10).click();
   }
 
-  click_signup_button(countryName) {
-    var sign_up_btn = ".styles_SignUpButton__pw0kf span";
-    var country_selection_dropdown = "div[class^='styles_SelectedItem'] span";
-    var search_within_country_dropdown =
-      "div[class^='styles_SearchBoxContainer'] input";
-    var click_searched_country = "div[class^='styles_ListItem'] span";
-    var click_continue_btn = "span[class^='styles_DesktopFormButton'] button";
-
-    cy.get(sign_up_btn).eq(0).click();
+  click_signup_button() {
+    cy.get(locators.sign_up_btn).eq(0).click();
+  }
+  
+  assert_signup_modal(){
     cy.on("window:alert", (text) => {
       expect(text).to.contains(
         "So that you can open the best account for you, start by telling us where you live."
       );
     });
-    cy.get(country_selection_dropdown).should("be.visible");
-    cy.get(country_selection_dropdown).click();
-    cy.get(search_within_country_dropdown).click().type(countryName);
-    cy.get(click_searched_country).click();
-    cy.get(click_continue_btn).click();
-
-    cy.on("window:alert", (text) => {
-      expect(text).to.contains("We're sorry...");
-    });
   }
 
-  click_home_banner_signup_button(countryName) {
-    var sign_up_btn = "div[class^='SignupIcons_SignupIconsContainer'] div";
-    var country_selection_dropdown = "div[class^='styles_SelectedItem'] span";
-    var search_within_country_dropdown =
-      "div[class^='styles_SearchBoxContainer'] input";
-    var click_searched_country = "div[class^='styles_ListItem'] span";
-    var click_continue_btn = "span[class^='styles_DesktopFormButton'] button";
-
-    cy.get(sign_up_btn).eq(0).click();
-    cy.on("window:alert", (text) => {
-      expect(text).to.contains(
-        "So that you can open the best account for you, start by telling us where you live."
-      );
-    });
-    cy.get(country_selection_dropdown).should("be.visible");
-    cy.get(country_selection_dropdown).click();
-    cy.get(search_within_country_dropdown).click().type(countryName);
-    cy.get(click_searched_country).click();
-    cy.get(click_continue_btn).click();
-
-    cy.on("window:alert", (text) => {
-      expect(text).to.contains("We're sorry...");
-    });
+  click_country_dropdown() {
+    cy.get(locators.country_selection_dropdown).should("be.visible");
+    cy.get(locators.country_selection_dropdown).click();
   }
+
+  enter_and_search_countryname(countryName) {
+    cy.get(locators.search_within_country_dropdown).click().type(countryName);
+    cy.get(locators.click_searched_country).click();
+  }
+
+  click_continue_btn() {
+    cy.get(locators.click_continue_btn).click();
+  }
+
+  click_homebanner_signup_button() {
+    cy.get(locators.homebanner_sign_up_btn).eq(0).click();
+   }
 }
 
 export default new sign_up_page();

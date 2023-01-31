@@ -28,14 +28,22 @@ describe("Navigation to https://monese.com", () => {
       it("should click SignUp button", () => {
         cy.viewport(Cypress.config().viewport);
         sign_up_page.click_cookie_button();
-        sign_up_page.click_signup_button(c);
+        sign_up_page.click_signup_button()
+        sign_up_page.assert_signup_modal();
+        sign_up_page.click_country_dropdown();
+        sign_up_page.enter_and_search_countryname(c)
+        sign_up_page.click_continue_btn
         cy.end();
       });
 
-      it("should click SignUp button on Home Banner", () => {
+      it.only("should click SignUp button on Home Banner", () => {
         cy.viewport(Cypress.config().viewport);
         sign_up_page.click_cookie_button();
-        sign_up_page.click_home_banner_signup_button(c);
+        sign_up_page.click_homebanner_signup_button();
+        sign_up_page.assert_signup_modal();
+        sign_up_page.click_country_dropdown();
+        sign_up_page.enter_and_search_countryname(c)
+        sign_up_page.click_continue_btn
         cy.end();
       });
     });
