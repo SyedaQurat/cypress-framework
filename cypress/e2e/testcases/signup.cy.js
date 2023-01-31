@@ -36,7 +36,7 @@ describe("Navigation to https://monese.com", () => {
         cy.end();
       });
 
-      it.only("should click SignUp button on Home Banner", () => {
+      it("should click SignUp button on Home Banner", () => {
         cy.viewport(Cypress.config().viewport);
         sign_up_page.click_cookie_button();
         sign_up_page.click_homebanner_signup_button();
