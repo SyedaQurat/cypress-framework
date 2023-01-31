@@ -1,4 +1,4 @@
-# README #
+# Web Automation #
 
 We are aiming to do automation on **[monese.com](https://monese.com/gb/en)** with the help of [Cypress](https://www.cypress.io/) testing tool.
 ### What is this repository for? ###
