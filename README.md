@@ -22,8 +22,8 @@ To run the tests in headed-less, run following
 ### Contribution guidelines ###
 
 * This follows the **Cypress** way of writing test:
-  * _define_: to group our test cases
-  * _it_: for an individual test case
+    * _define_: to group our test cases
+    * _it_: for an individual test case
 
 
 ### Who do I talk to? ###
