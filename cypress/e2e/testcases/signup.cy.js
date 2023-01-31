@@ -15,7 +15,7 @@ describe("Navigation to https://monese.com", () => {
       cy.end();
     });
 
-    it("should save Cookie settings", () => {
+    it("should save and assert Cookies settings", () => {
       cy.viewport(Cypress.config().viewport);
       sign_up_page.click_manage_settings_button();
       sign_up_page.assert_manage_settings_button();
@@ -25,7 +25,7 @@ describe("Navigation to https://monese.com", () => {
     });
 
     Cypress.config().country_list.forEach((c) => {
-      it.only("should click SignUp button", () => {
+      it("should click SignUp button", () => {
         cy.viewport(Cypress.config().viewport);
         sign_up_page.click_cookie_button();
         sign_up_page.click_signup_button(c);
@@ -34,8 +34,7 @@ describe("Navigation to https://monese.com", () => {
 
       it("should click SignUp button on Home Banner", () => {
         cy.viewport(Cypress.config().viewport);
-
-        sign_up_page.accept_cookies();
+        sign_up_page.click_cookie_button();
         sign_up_page.click_home_banner_signup_button(c);
         cy.end();
       });
