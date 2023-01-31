@@ -7,7 +7,7 @@ module.exports = defineConfig({
   e2e: {
     baseUrl: "https://monese.com/gb/en",
     viewport: "macbook-16",
-    countryName: "Pakistan",
+    country_list: ["Germany", "Austria", "Pakistan", "Estonia", "Finland"],
     setupNodeEvents(on, config) {
       allureWriter(on, config);
       return config;

@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "cy:run": "cypress run --browser chrome --headed --env allure=true",
+    "cy:run": "cypress run --browser chrome --env allure=true",
+    "cy:run:headed": "cypress run --browser firefox --headed --env allure=true",
     "allure:report": "yarn run allure generate allure-results --clean -o allure-report && allure open allure-report",
     "test": "npm run allure:report"
   },
@@ -19,6 +20,7 @@
     "prettier": "^2.8.3"
   },
   "dependencies": {
+    "cypress-each": "^1.13.1",
     "package-name": "^0.1.0"
   }
 }
